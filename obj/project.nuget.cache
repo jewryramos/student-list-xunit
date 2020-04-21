@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AQHUdftdi+duwxfSqfiaN5seqMxZmg+HUs0+pVh/MCjDP2E22uOmjKo4ZLkmaz/jmlErkvUipgI15tl/+bkzNQ==",
+  "dgSpecHash": "UoZHAm4Rt0mOExfc4h/gKD7/TtOuCvzbjhTAsRNMkZ0uLKLCkk8Bg1+0ZX5qdfJQ48q+t7cCwHugYRdVegVKgQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jewry\\local-repo\\studentlist1\\studentlist1.csproj",
+  "projectFilePath": "C:\\Users\\jewry\\local-repo\\student-list-xunit\\studentlist1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

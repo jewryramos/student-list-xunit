@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jewry\\local-repo\\studentlist1\\studentlist1.csproj": {}
+    "C:\\Users\\jewry\\local-repo\\student-list-xunit\\studentlist1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jewry\\local-repo\\studentlist1\\studentlist1.csproj": {
+    "C:\\Users\\jewry\\local-repo\\student-list-xunit\\studentlist1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jewry\\local-repo\\studentlist1\\studentlist1.csproj",
+        "projectUniqueName": "C:\\Users\\jewry\\local-repo\\student-list-xunit\\studentlist1.csproj",
         "projectName": "studentlist1",
-        "projectPath": "C:\\Users\\jewry\\local-repo\\studentlist1\\studentlist1.csproj",
+        "projectPath": "C:\\Users\\jewry\\local-repo\\student-list-xunit\\studentlist1.csproj",
         "packagesPath": "C:\\Users\\jewry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jewry\\local-repo\\studentlist1\\obj\\",
+        "outputPath": "C:\\Users\\jewry\\local-repo\\student-list-xunit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jewry\\AppData\\Roaming\\NuGet\\NuGet.Config"

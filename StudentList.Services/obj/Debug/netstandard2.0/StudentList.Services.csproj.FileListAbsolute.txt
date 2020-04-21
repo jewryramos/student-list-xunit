@@ -1,0 +1,9 @@
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\bin\Debug\netstandard2.0\StudentList.Services.deps.json
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\bin\Debug\netstandard2.0\StudentList.Services.dll
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\bin\Debug\netstandard2.0\StudentList.Services.pdb
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\obj\Debug\netstandard2.0\StudentList.Services.csprojAssemblyReference.cache
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\obj\Debug\netstandard2.0\StudentList.Services.csproj.CoreCompileInputs.cache
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\obj\Debug\netstandard2.0\StudentList.Services.AssemblyInfoInputs.cache
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\obj\Debug\netstandard2.0\StudentList.Services.AssemblyInfo.cs
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\obj\Debug\netstandard2.0\StudentList.Services.dll
+C:\Users\jewry\local-repo\student-list-xunit\StudentList.Services\obj\Debug\netstandard2.0\StudentList.Services.pdb
