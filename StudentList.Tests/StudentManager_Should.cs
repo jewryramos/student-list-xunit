@@ -30,5 +30,31 @@ namespace StudentList.Tests
             Assert.True(actual.Length == 3);
             Assert.Contains("student3",actual);
         }
+
+        [Fact]
+        public void ReturnCorrectStudentCount()
+        {
+            //Arrange
+            var sut = new StudentManager(mockStorage.Object);
+
+            //Act
+            var actual = sut.CountStudent();
+
+            //Assert
+            Assert.Equal(actual,3);
+        }
+
+        [Fact]
+        public void ReturnRandomStudent()
+        {
+            //Arrange
+            var sut = new StudentManager(mockStorage.Object);
+            var actualString = mockStorage.Object.LoadStudentList();
+            //Act
+            var expectedSubString = sut.PickRandomStudent();
+
+            //Assert
+            Assert.Contains(expectedSubString,actualString);
+        }
     }
 }

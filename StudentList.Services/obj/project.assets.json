@@ -180,7 +180,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jewry\\.nuget\\packages\\": {}
+    "C:\\Users\\jewry\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -191,13 +192,19 @@
       "packagesPath": "C:\\Users\\jewry\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jewry\\local-repo\\student-list-xunit\\StudentList.Services\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jewry\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\jewry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
