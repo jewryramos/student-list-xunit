@@ -1,39 +1,51 @@
 ﻿using System;
+using System.Linq;
+
 
 namespace StudentList.Services
 {
     public class StudentManager
     {
+        private const char StudentEntryDelimiter = ',';
         private StudentStorage _storage;
+        private Random _rand;
+        private string _studentList;
 
-        public StudentManager()
-        {
-            _storage = new StudentStorage();
-        }
         public StudentManager(StudentStorage storage)
         {
             _storage = storage;
+            _rand = new Random();
+            _studentList = _storage.LoadStudentList();
         }
-        public string[] GetAllStudents()
+
+        public string[] Students
         {
-            var studentList = _storage.LoadStudentList();
-            return studentList.Split(',');
-            
+            get
+            {
+                return _studentList.Split(StudentEntryDelimiter);
+            }
         }
-        public int CountStudent()
-        {
-             var studentList = _storage.LoadStudentList();
-            return studentList.Split(',').Length;
-        }
+
         public string PickRandomStudent()
         {
-            var studentList = _storage.LoadStudentList();
-            var students = studentList.Split(',');
+            var randomIndex = _rand.Next(0, Students.Length);
+            return Students[randomIndex];
+        }
 
-            var rand = new Random();
-            var randomIndex = rand.Next(0, students.Length);
-            return students[randomIndex];
-
+        public bool StudentExists(string student)
+        {
+            //Using the 'Any' Liqn method to return wether or not
+            //any items inside the Students object matches the given predicate
+            if(this.Students.Any(s => s.Trim() == student))
+            {
+                return true;
+            }
+            return false;
+        }
+        public void AddStudent(string newStudent)
+        {
+            _studentList += "," + newStudent;
+            _storage.UpdateStudentList(_studentList);
         }
     }
 }

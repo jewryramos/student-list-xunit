@@ -23,7 +23,7 @@ namespace StudentList.Tests
             var sut = new StudentManager(mockStorage.Object);
 
             //Act
-            var actual = sut.GetAllStudents();
+            var actual = sut.Students;
 
             //Assert
             Assert.IsType(typeof(string[]), actual);
@@ -38,7 +38,7 @@ namespace StudentList.Tests
             var sut = new StudentManager(mockStorage.Object);
 
             //Act
-            var actual = sut.CountStudent();
+            var actual = sut.Students.Length;
 
             //Assert
             Assert.Equal(actual,3);
@@ -55,6 +55,48 @@ namespace StudentList.Tests
 
             //Assert
             Assert.Contains(expectedSubString,actualString);
+        }
+
+        [Fact]
+        public void ReturnTrue_When_SearchForExistingStudent()
+        {
+            //Arrange
+            var sut = new StudentManager(mockStorage.Object);
+            var existingStudent = "student1"; //This student is setup in mock StudentStorage boject
+            //Act
+            var actual = sut.StudentExists(existingStudent);
+
+            //Assert
+            Assert.True(actual);
+        }
+
+        [Fact]
+        public void ReturnFalse_When_SearchForExistingStudent()
+        {
+            //Arrange
+            var sut = new StudentManager(mockStorage.Object);
+            var fakeStudent = "notRealStudent"; //This student is setup in mock StudentStorage boject
+            //Act
+            var actual = sut.StudentExists(fakeStudent);
+
+            //Assert
+            Assert.False(actual);
+        }
+        
+        [Fact]
+        public void Call_UpdateStudentList_When_StudentAdded()
+        {
+            //Arrange
+            var sut = new StudentManager(mockStorage.Object);
+            var originalList = mockStorage.Object.LoadStudentList();
+            var newStudent = "testStudent";
+            var updatedList = originalList + "," + newStudent;
+
+            //Act
+            sut.AddStudent(newStudent);
+
+            //Assert
+            mockStorage.Verify(x => x.UpdateStudentList(updatedList));
         }
     }
 }
