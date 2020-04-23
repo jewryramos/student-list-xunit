@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using StudentList.Services;
 
 namespace studentlist1
 {
@@ -16,42 +17,31 @@ namespace studentlist1
                 return; //Exit Early.
             }
 
-            var studentList = LoadStudentList(Constants.StudentList);
+            var studentManager = new StudentManager();
 
             if (args[0] == Constants.ShowAll) 
             {
-                var students = studentList.Split(',');
-                foreach(var student in students) 
+                foreach(var student in studentManager.Students) 
                 {
                     Console.WriteLine(student);
                 }
             }
             else if (args[0]== Constants.ShowRandom)
             {
-
-                // We are loading data
-                var students = studentList.Split(Constants.StudentEntryDelimiter);
-                var rand = new Random();
-                var randomIndex = rand.Next(0,students.Length);
-                Console.WriteLine(students[randomIndex]);
+                Console.WriteLine(studentManager.PickRandomStudent());
             }
             else if (args[0].StartsWith(Constants.AddEntry))
             {
                 // read
                 var newEntry = args[0].Substring(1);
 
-                // Write
-                // But we're in trouble if there are ever duplicates entered
-                UpdateStudentList(studentList + Constants.StudentEntryDelimiter + newEntry, "students.txt");
+                studentManager.AddStudent(newEntry);
             }
             else if (args[0].StartsWith(Constants.FindEntry))
             {
-                var students = studentList.Split(Constants.StudentEntryDelimiter);
                 var searchTerm = args[0].Substring(1);
-                
-                //Using the 'Any' LINQ method to return wether or not
-                //any item matches the given predicate
-                if(students.Any(s => s.Trim() == searchTerm))
+
+                if(studentManager.StudentExists(searchTerm))
                 {
                     Console.WriteLine($"Entry '{searchTerm}' found.");
                 }
@@ -62,11 +52,12 @@ namespace studentlist1
             }
             else if (args[0].Contains(Constants.ShowCount))
             {
-                var students = studentList.Split(Constants.StudentEntryDelimiter);
-                Console.WriteLine(String.Format(" {0} words found", students.Length));
+                Console.WriteLine(String.Format(" {0} words found", studentManager.Students.Length));
             }
             else
             {
+                //Arguments were supplied, but they were invalid. We'll handle this case
+                //gracefully by listing valid arguments to the users.
                 ShowUsage();
             }
             

@@ -17,6 +17,12 @@ namespace StudentList.Services
             _rand = new Random();
             _studentList = _storage.LoadStudentList();
         }
+        public StudentManager()
+        {
+            _storage = new StudentStorage();
+            _rand = new Random();
+            _studentList = _storage.LoadStudentList();
+        }
 
         public string[] Students
         {
@@ -28,8 +34,8 @@ namespace StudentList.Services
 
         public string PickRandomStudent()
         {
-            var randomIndex = _rand.Next(0, Students.Length);
-            return Students[randomIndex];
+            var randomIndex = _rand.Next(0,this.Students.Length);
+            return this.Students[randomIndex];
         }
 
         public bool StudentExists(string student)

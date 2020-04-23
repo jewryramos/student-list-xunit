@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "studentlist1/1.0.0": {
+        "dependencies": {
+          "StudentList.Services": "1.0.0"
+        },
+        "runtime": {
+          "studentlist1.dll": {}
+        }
+      },
+      "StudentList.Services/1.0.0": {
+        "runtime": {
+          "StudentList.Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "studentlist1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StudentList.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
